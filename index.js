@@ -40,7 +40,12 @@ app.get("/getotp/:phone", async (req, res) => {
           if (err) console.log(err);
 
           //result
-          res.send(row?.recordsets[0]);
+          //   res.send(row?.recordsets[0]);
+          res.json({
+            status: 200,
+            message: "Success",
+            result: row.recordsets[0],
+          });
         }
       );
     });
